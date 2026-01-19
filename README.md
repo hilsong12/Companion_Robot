@@ -1,0 +1,50 @@
+
+![0001-0100.gif](attachment:5df817ea-affd-46b3-9e06-a93b119a9d9d:0001-0100.gif)
+
+![0001-0100.gif](attachment:5df817ea-affd-46b3-9e06-a93b119a9d9d:0001-0100.gif)
+
+![image.png](attachment:98e9f995-ca22-4547-82f1-ceac863e8d89:image.png)
+
+![image.png](attachment:887e084b-7521-476b-b27f-069a135aa3a6:image.png)
+
+![image.png](attachment:964b28a9-94ea-45e0-9a85-ee8bd1f4d8f6:image.png)
+
+## **[Project] On-Device AI 기반 지능형 로봇 독 개발**
+
+주요 역할: 시스템 아키텍처 설계, AI 추적 알고리즘 구현(Python), FPGA RTL 설계(Verilog)
+
+**1. 프로젝트 개요**
+On-Device AI 과정을 이수하며 배운 고수준 소프트웨어 연산과 저수준 하드웨어 제어를 결합해 보고자 기획한 프로젝트입니다. Raspberry Pi 4를 '두뇌'로, Basys 3 FPGA를 '신경계'로 활용하여 사용자의 얼굴을 추적하고 제스처에 따라 반응하는 지능형 로봇 시스템을 구축했습니다.
+
+**2. 시스템 아키텍처**
+단일 프로세서의 한계를 극복하기 위해 **Heterogeneous Computing(이종 컴퓨팅)** 구조를 채택했습니다.
+• **Raspberry Pi 4 (Master):** OpenCV와 MediaPipe를 활용한 실시간 Face/Hand Mesh 추출 및 UART 통신 패킷 생성.
+• **Basys 3 FPGA (Slave):** 수신된 UART 데이터를 파싱하여 2개의 DC 모터, 1개의 서보 모터, 그리고 SPI 기반 LCD 디스플레이를 실시간으로 동시 제어.
+
+**3. 핵심 구현 내용
+🛰️ 소프트웨어: 병렬 처리를 통한 실시간성 확보 (Python)**
+• **Multiprocessing 도입:** 고용량 LCD 이미지 데이터를 전송하는 동안 AI 연산이 멈추는 병목 현상을 해결하기 위해 process 와 queue를 사용하여 LCD 전송 전용 프로세스를 분리했습니다.
+• **Gesture Control 로직:** 손가락 랜드마크 분석을 통해 '손바닥(Stop)' 제스처를 감지하면 추적을 멈추고 LCD 표정을 변경하는 상태 머신을 구현했습니다.
+• **Custom UART Protocol:** 안정적인 제어를 위해
+
+ [Header(0xFF), Servo, L_Speed, R_Speed, Dir] 형식을 갖춘 5바이트 커스텀 패킷을 설계했습니다.
+
+**⚡ 하드웨어: 고속 데이터 처리 및 정밀 제어 (Verilog)**
+• **High-Speed UART Rx (460,800bps):** LCD 픽셀 데이터를 실시간으로 수신하기 위한 고속 UART 모듈을 구현했습니다.
+• **LCD FSM 설계:** 8비트로 들어오는 데이터를 16비트(RGB565)로 조립하여 ILI9341 LCD 드라이버에 SPI로 송출하는 Finite State Machine을 직접 설계했습니다.
+• **Precision PWM Generation:** 1us 단위의 틱(Tick)을 생성하여 서보 모터의 각도를 1도 단위로 제어하고, DC 모터의 속도를 256단계로 정밀 조절했습니다.
+
+**4. 트러블슈팅 및 성능 최적화
+✅ 표정 변경 시 동기화 문제 해결**
+• **문제:** LCD 이미지를 업데이트하는 약 0.5초 동안 로봇이 이전 명령을 유지하며 벽에 충돌하는 위험이 발생했습니다.
+• **해결:** 표정 변경 시 즉시 모터 정지 패킷을 보내고, LCD 프로세스로부터 완료 신호(ACK)를 받을 때까지 대기하는 동기화 로직을 추가하여 안전성을 확보했습니다.
+**✅ 이미지 전송 대역폭 최적화**
+• **내용:** FPGA에서 연산 부담을 줄이기 위해 Python단에서 미리 $RGB888$ 데이터를 $RGB565$ 포맷으로 비트 연산하여 전송했습니다. 이를 통해 UART 대역폭 사용량을 33% 절감하고 화면 갱신 속도를 높였습니다.
+
+**5. 프로젝트 결과 및 회고**
+이번 프로젝트를 통해 **임베디드 시스템에서의 실시간 데이터 동기화**와 **S/W-H/W 간의 역할 분담 최적화**의 중요성을 깊이 체감했습니다. 특히 FPGA를 이용해 복잡한 타이밍 제어가 필요한 LCD와 모터를 동시에 구동해 보며 하드웨어 설계 역량을 한 단계 높일 수 있었습니다.
+향후에는 이 시스템에 더해, 비전 인식 데이터를 바탕으로 한 장애물 회피 알고리즘을 추가하여 시스템의 완성도를 높여갈 계획입니다.
+
+DEMO VIDEO
+
+![image.png](attachment:30f49faa-52eb-4b2c-9a95-696ca2263ab2:image.png)
