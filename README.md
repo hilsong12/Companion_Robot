@@ -1,13 +1,6 @@
 
-![0001-0100.gif](attachment:5df817ea-affd-46b3-9e06-a93b119a9d9d:0001-0100.gif)
+![Uploading 0001-0100.gif…]()
 
-![0001-0100.gif](attachment:5df817ea-affd-46b3-9e06-a93b119a9d9d:0001-0100.gif)
-
-![image.png](attachment:98e9f995-ca22-4547-82f1-ceac863e8d89:image.png)
-
-![image.png](attachment:887e084b-7521-476b-b27f-069a135aa3a6:image.png)
-
-![image.png](attachment:964b28a9-94ea-45e0-9a85-ee8bd1f4d8f6:image.png)
 
 ## **[Project] On-Device AI 기반 지능형 로봇 독 개발**
 
