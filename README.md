@@ -1,7 +1,7 @@
 
-![Uploading 0001-0100.gif…]()
+![0001-0100.gif…]()
 
-![Uploading b123.jpg…]()
+![b123.jpg…]()
 
 
 ## **[Project] On-Device AI 기반 지능형 로봇 독 개발**
