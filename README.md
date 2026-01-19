@@ -2,6 +2,16 @@
 
 ![0001-0100](https://github.com/user-attachments/assets/cfc459ac-4d47-4f98-bc5f-d4a0a2ea6bbf)
 
+![RC_CAR](https://github.com/user-attachments/assets/89029185-414f-4aee-a1c8-d543edda71b0)
+
+<img width="807" height="457" alt="Screenshot from 2026-01-19 22-29-35" src="https://github.com/user-attachments/assets/02bbb3e9-e22f-4311-8833-34e8d3c131c0" />
+
+![Screenshot_from_2026-01-12_10-20-33](https://github.com/user-attachments/assets/d7ce8ff3-d311-4534-9720-a436885cbe48)
+
+![IMG_6028](https://github.com/user-attachments/assets/04e01348-c993-44c6-98ab-5c75234e4899)
+
+
+
 ## **[Project] On-Device AI 기반 지능형 로봇 독 개발**
 
 주요 역할: 시스템 아키텍처 설계, AI 추적 알고리즘 구현(Python), FPGA RTL 설계(Verilog)
@@ -40,4 +50,10 @@ On-Device AI 과정을 이수하며 배운 고수준 소프트웨어 연산과 �
 
 DEMO VIDEO
 
-![image.png](attachment:30f49faa-52eb-4b2c-9a95-696ca2263ab2:image.png)
+<img width="199" height="203" alt="Screenshot from 2026-01-19 22-30-46" src="https://github.com/user-attachments/assets/ede9702a-5576-49c8-ba6b-6007b2da58ad" />
+
+
+
+https://github.com/user-attachments/assets/2ee1397b-8c5c-421a-b0a0-e1399bee75c5
+
+
