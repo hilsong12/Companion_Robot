@@ -1,8 +1,6 @@
 
-![0001-0100.gif…]()
 
-![b123.jpg…]()
-
+![0001-0100](https://github.com/user-attachments/assets/cfc459ac-4d47-4f98-bc5f-d4a0a2ea6bbf)
 
 ## **[Project] On-Device AI 기반 지능형 로봇 독 개발**
 
