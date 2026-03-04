@@ -4,7 +4,6 @@
 
 ![RC_CAR](https://github.com/user-attachments/assets/89029185-414f-4aee-a1c8-d543edda71b0)
 
-<img width="807" height="457" alt="Screenshot from 2026-01-19 22-29-35" src="https://github.com/user-attachments/assets/02bbb3e9-e22f-4311-8833-34e8d3c131c0" />
 
 <img width="841" height="527" alt="image" src="https://github.com/user-attachments/assets/f9b8d6ec-a4c4-45ad-b9fa-1a3e298ae6e0" />
 
